@@ -8,7 +8,7 @@ const Header = () => {
         <div>
             <Navbar bg="success" variant="dark" >
                 <Container>
-                    <Navbar.Brand href="#home" className='pe-5'>Radhunir Ghar</Navbar.Brand>
+                    <Navbar.Brand  className='pe-5'>Radhunir Ghar</Navbar.Brand>
                     <Nav className=" flex-grow-1 ps-5 text-center">
                         <Link className='text-decoration-none text-white pe-5' to='/'>Home</Link>
                         <Link className='text-decoration-none text-white' to='/'>Blog</Link>
