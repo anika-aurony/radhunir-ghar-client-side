@@ -3,7 +3,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Chef = ({chef}) => {
-    const {picture, likes, experiance, name, recipesNumber} = chef;
+    const {_id, picture, likes, experiance, name, recipesNumber} = chef;
     return (
         <div>
             <Col >
@@ -16,7 +16,7 @@ const Chef = ({chef}) => {
                             <p>Number of Recipes: {recipesNumber}</p>
                             <div className='d-flex justify-content-between'>
                                 <p>Likes: {likes}</p>
-                                <Link to='/'><Button variant="outline-success" >View Recipes</Button></Link>
+                                <Link to={`/chefs/${_id}`}><Button variant="outline-success" >View Recipes</Button></Link>
                                 
                             </div>
                         </Card.Text>
