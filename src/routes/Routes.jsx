@@ -4,6 +4,7 @@ import Login from "../pages/Login/Login/Login";
 import Registration from "../pages/Login/Registration/Registration";
 import Home from "../pages/Home/Home/Home";
 import ViewRecipe from "../pages/ViewRecipe/ViewRecipe";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
             path: 'chefs/:id',
-            element: <ViewRecipe></ViewRecipe>,
+            element: <PrivateRoutes><ViewRecipe></ViewRecipe></PrivateRoutes>,
             
         },
       ]

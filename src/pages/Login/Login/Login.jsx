@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
-const handleLogin = event => {
 
-}
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
     return (
         <Container className='w-25 mx-auto my-5'>
             <h3 className='text-center py-3'>Please Login</h3>
@@ -36,6 +58,18 @@ const Login = () => {
                 </Form.Text>
 
             </Form>
+            <hr />
+           <div className='d-flex '>
+           <Button variant="success" type="submit" className='me-1'>
+                Sign In with Google
+            </Button>
+           
+            <Button variant="success" type="submit" className=''>
+                Sign In with Github
+            </Button>
+           </div>
+
+
         </Container>
     );
 };
