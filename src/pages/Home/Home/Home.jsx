@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import { useLoaderData } from 'react-router-dom';
 import Chef from '../Chefs/Chef';
 import { Row } from 'react-bootstrap';
+import Popular from './Popular/Popular';
 
 const Home = () => {
 
@@ -18,6 +19,10 @@ const Home = () => {
                         chefs.map(chef => <Chef key={chef._id} chef={chef}></Chef>)
                     }
                 </Row>
+            </div>
+            <div className='mt-3 px-5'>
+                <h3 className='text-success my-5 text-center'>Most Popular Food in Bangladesh</h3>
+                    <Popular></Popular>
             </div>
 
         </div>
