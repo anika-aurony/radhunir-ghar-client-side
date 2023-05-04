@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
     const { createUser } = useContext(AuthContext);
@@ -20,16 +21,30 @@ const Registration = () => {
             setError('Password should be minimum 6 characters')
         }
         console.log(name, photo, email, password);
-        createUser(email, password)
+        createUser(email, password, photo)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                updateUserData(result.user, name, photo);
             })
             .catch(error => {
                 console.log(error);
                 
             })
             form.reset();
+    }
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+        .then(()=>{
+            console.log('user name updated')
+        })
+        .catch(()=>{
+            setError(error.message)
+        })
     }
     return (
         <Container className='w-25 mx-auto my-3'>
