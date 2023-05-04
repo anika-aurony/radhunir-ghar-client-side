@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 const Banner = () => {
     return (
         <div className="card text-dark  " >
-            <img src="https://thesimpletravel.com/wp-content/uploads/2022/02/Foods-in-Bangladesh.jpg?ezimgfmt=ng%3Awebp%2Fngcb4%2Frs%3Adevice%2Frscb4-1" className="card-img" alt="..." style={{ height: '450px', opacity: '0.6' }} />
+            <img src="https://thesimpletravel.com/wp-content/uploads/2022/02/Foods-in-Bangladesh.jpg?ezimgfmt=ng%3Awebp%2Fngcb4%2Frs%3Adevice%2Frscb4-1" className="card-img" alt="..." style={{ height: '450px', opacity: '0.5' }} />
             <div className='text-center text-success' >
                 <div className="card-img-overlay ">
                     <h5 className="card-title p-5" style={{ fontWeight: '600px', fontSize: '60px' }}>Welcome to Radhunir Ghar</h5>

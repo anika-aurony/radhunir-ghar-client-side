@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar bg="success" variant="dark" >
+            <Navbar  variant="dark" style={{backgroundColor: 'mediumseagreen'}} >
                 <Container>
                     <Navbar.Brand className='pe-5'>Radhunir Ghar</Navbar.Brand>
                     <Nav className=" flex-grow-1 ps-5 text-center">
@@ -25,7 +25,7 @@ const Header = () => {
                     </Nav>
                     <Nav className='me-auto'>
                         
-                        {user && <p className='text-white pt-2 ' data-toggle="tooltip" data-placement="right" title={user?.displayName}> <img src={user?.photoURL
+                        {user && <p className='text-white pt-2 me-3 ' data-toggle="tooltip" data-placement="right" title={user?.displayName}> <img src={user?.photoURL
                         } alt="" srcset="" style={{height: '40px', borderRadius: '50%', width: '40px'}}/> </p>}
 
                         {user ?

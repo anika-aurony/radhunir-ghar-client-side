@@ -1,21 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import {  useParams } from 'react-router-dom';
+import { Card, Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import ChefBanner from './ChefBanner';
 
 const ViewRecipe = () => {
     const { id } = useParams();
+    const [Isloading, setIsLoading] = useState(true)
     // const chefsRecipe = useLoaderData();
+    Isloading
     console.log(id)
-
-    const [chefsRecipe, setChefsRecipe] =useState()
-    console.log(chefsRecipe)
-    useEffect(()=>{
+    if(Isloading){
+        <Spinner animation="border" variant="primary" />
+    }
+    
+    const [chefsRecipe, setChefsRecipe] = useState()
+    useEffect(() => {
+        
         fetch(`http://localhost:5000/chefs/${id}`)
-        .then(res=>res.json())
-        .then(data=>setChefsRecipe(data))
-    },[])
+            .then(res => res.json())
+            .then(data => {
+                setChefsRecipe(data)
+                setIsLoading(false)
+            })
+    }, [])
+
+    
+    console.log(chefsRecipe)
+    
+
     return (
         <div>
-            <h1>hi</h1>
+            {
+                Isloading==false && <ChefBanner chefsRecipe={chefsRecipe}></ChefBanner>
+            }
+            
+            
         </div>
     );
 };

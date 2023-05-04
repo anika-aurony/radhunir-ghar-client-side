@@ -5,6 +5,7 @@ import Registration from "../pages/Login/Registration/Registration";
 import Home from "../pages/Home/Home/Home";
 import ViewRecipe from "../pages/ViewRecipe/ViewRecipe";
 import PrivateRoutes from "./PrivateRoutes";
+import Page404 from "../pages/Page404/Page404";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             element: <PrivateRoutes><ViewRecipe></ViewRecipe></PrivateRoutes>,
             
         },
+        {
+            path: '*',
+            element: <Page404></Page404>
+        }
       ]
     },
   ]);
