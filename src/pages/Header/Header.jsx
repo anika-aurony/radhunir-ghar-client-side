@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaSignInAlt, FaUserCircle  } from 'react-icons/fa';
+import { FaSignInAlt, FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
@@ -24,9 +24,9 @@ const Header = () => {
 
                     </Nav>
                     <Nav className='me-auto'>
-                        {
-                            user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
-                        }
+                        
+                        {user && <p className='text-white pt-2 ' data-toggle="tooltip" data-placement="right" title={user?.displayName}> <img src={user?.photoURL
+                        } alt="" srcset="" style={{height: '40px', borderRadius: '50%', width: '40px'}}/> </p>}
 
                         {user ?
                             <Button onClick={handleLogOut} variant="success">Logout</Button> :
