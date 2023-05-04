@@ -1,6 +1,6 @@
 # Radhunir Ghar
 
-[Live Site Link]()
+[Live Site Link](https://chef-recipe-assignment-b38d9.web.app/)
 
 ## Features of the projects:
 #### This is Chef Hunt website

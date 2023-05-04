@@ -16,7 +16,7 @@ const ViewRecipe = () => {
     const [chefsRecipe, setChefsRecipe] = useState()
     useEffect(() => {
         
-        fetch(`http://localhost:5000/chefs/${id}`)
+        fetch(`https://chef-recipe-assignment-project-server-anika-tasnim-aurony.vercel.app/chefs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setChefsRecipe(data)

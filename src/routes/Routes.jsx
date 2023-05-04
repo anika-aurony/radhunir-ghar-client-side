@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/chefs')
+            loader: () => fetch('https://chef-recipe-assignment-project-server-anika-tasnim-aurony.vercel.app/chefs')
         },
         {
             path: '/login',
