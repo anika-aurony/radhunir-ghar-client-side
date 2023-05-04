@@ -3,6 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaSignInAlt, FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
+import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);

@@ -1,0 +1,10 @@
+@media only screen and (max-width:688px) {
+    .text-title{
+        
+        font-weight: 100;
+        display: none;
+    }
+    .banner-text{
+        font-size: small;
+    }
+}

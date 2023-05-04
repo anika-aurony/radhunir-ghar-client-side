@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, Row } from 'react-bootstrap';
 import ViewItems from './ViewItems';
+import './ChefBanner/ChefBanner.css'
 
 const ChefBanner = ({ chefsRecipe }) => {
     const { picture, desc, name, experiance, likes, recipesNumber, recipes } = chefsRecipe
     return (
         <div>
             <Card>
-                <div className='d-flex'>
-                    <Card.Img variant="top" className='w-50 ' src={picture} style={{height: '450px'}}/>
+                <div className='d-md-flex'>
+                    <Card.Img variant="top" className='w-50 images-css ' src={picture} style={{height: '450px'}}/>
                     <Card.Body>
                         <Card.Text>
                             <h4>{name}</h4>

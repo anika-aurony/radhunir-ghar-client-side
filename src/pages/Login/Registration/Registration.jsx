@@ -47,7 +47,7 @@ const Registration = () => {
         })
     }
     return (
-        <Container className='w-25 mx-auto my-3'>
+        <Container className='w-25 mx-auto my-3 make-responsive'>
             <h3 className='text-center py-3'>Please Register</h3>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

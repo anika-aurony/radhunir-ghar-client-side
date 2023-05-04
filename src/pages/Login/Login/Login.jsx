@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-
+import './Login.css'
 
 
 
@@ -61,9 +61,9 @@ const Login = () => {
 
 
     return (
-        <Container className='w-25 mx-auto my-5'>
+        <Container className='w-25 mx-auto my-5 make-responsive'>
             <h3 className='text-center py-3'>Please Login</h3>
-            <Form onSubmit={handleLogin}>
+            <Form onSubmit={handleLogin} className=''>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
