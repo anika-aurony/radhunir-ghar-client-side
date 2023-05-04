@@ -21,7 +21,7 @@ const Header = () => {
                     <Navbar.Brand className='pe-5'>Radhunir Ghar</Navbar.Brand>
                     <Nav className=" flex-grow-1 ps-5 text-center">
                         <Link className='text-decoration-none text-white pe-5' to='/'>Home</Link>
-                        <Link className='text-decoration-none text-white' to='/'>Blog</Link>
+                        <Link className='text-decoration-none text-white' to='/blog'>Blog</Link>
 
                     </Nav>
                     <Nav className='me-auto'>

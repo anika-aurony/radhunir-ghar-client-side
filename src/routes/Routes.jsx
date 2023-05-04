@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import ViewRecipe from "../pages/ViewRecipe/ViewRecipe";
 import PrivateRoutes from "./PrivateRoutes";
 import Page404 from "../pages/Page404/Page404";
+import Blog from "../pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             path: 'chefs/:id',
             element: <PrivateRoutes><ViewRecipe></ViewRecipe></PrivateRoutes>,
             
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         },
         {
             path: '*',
