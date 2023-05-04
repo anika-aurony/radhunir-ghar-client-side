@@ -7,7 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -30,6 +30,21 @@ const Login = () => {
             })
 
     }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result =>{
+            const logUser = result.user;
+            console.log(logUser);
+            navigate(from, { replace: true })
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+
+    }
+
+
     return (
         <Container className='w-25 mx-auto my-5'>
             <h3 className='text-center py-3'>Please Login</h3>
@@ -60,7 +75,7 @@ const Login = () => {
             </Form>
             <hr />
            <div className='d-flex '>
-           <Button variant="success" type="submit" className='me-1'>
+           <Button variant="success" type="submit" className='me-1' onClick={handleGoogleSignIn}>
                 Sign In with Google
             </Button>
            
